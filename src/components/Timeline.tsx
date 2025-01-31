@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import { AnimatedText } from "./ui/animated-text";
 
 
 const Timeline = () => {
@@ -12,7 +13,14 @@ const Timeline = () => {
      ];
    
      return (
-       <div className="relative">
+      <>
+                      <section className="py-20 px-4">
+                          <div className="max-w-6xl mx-auto">
+                              <AnimatedText
+                                  text="Event Timeline"
+                                  className="text-4xl font-bold mb-12 text-center"
+                              />
+                              <div className="relative">
          <div className="absolute left-1/2 h-full w-1 bg-gradient-to-b from-purple-500 to-pink-500 transform -translate-x-1/2" />
          {events.map((event, index) => (
            <motion.div
@@ -33,6 +41,10 @@ const Timeline = () => {
            </motion.div>
          ))}
        </div>
+                          </div>
+                      </section>
+      </>
+      
      );
    };
 
