@@ -1,12 +1,9 @@
-import React from 'react';
 import { Calendar, Users, Code, Trophy, ChevronRight, MessageCircle, Instagram, Github, Twitter, MapPin, Award, Gift, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AnimatedText } from './ui/animated-text';
 import { MovingBorder } from './ui/moving-border';
 import { Meteors } from './ui/meteor-effect';
 import  CountdownTimer from './ui/countdown-timer';
-import Timeline from './Timeline';
-import Tracks from './Tracks';
 
 const Hero = () => {
     return <>
@@ -41,9 +38,11 @@ const Hero = () => {
             >
             48 Hours of Innovation, Coding, and Creation
           </motion.p>
+
           <div className="mb-12">
             <CountdownTimer />
           </div>
+
           <div className="flex flex-wrap justify-center gap-4">
             <MovingBorder className="inline-block">
               <button className="relative px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold hover:scale-105 transition-transform">

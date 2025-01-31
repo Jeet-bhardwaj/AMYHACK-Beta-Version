@@ -27,7 +27,7 @@ const Footer = () => {
               ))}
             </motion.div>
             <div className="text-center text-sm text-gray-400">
-              © 2024 Amikoders Hackathon. All rights reserved.
+              © 2025 Amikoders Hackathon. All rights reserved.
             </div>
           </div>
         </footer></>)
