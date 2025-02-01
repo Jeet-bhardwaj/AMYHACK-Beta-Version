@@ -1,69 +1,88 @@
-import { Calendar, Users, Code, Trophy, ChevronRight, MessageCircle, Instagram, Github, Twitter, MapPin, Award, Gift, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { AnimatedText } from './ui/animated-text';
-import { MovingBorder } from './ui/moving-border';
-import { Meteors } from './ui/meteor-effect';
-import  CountdownTimer from './ui/countdown-timer';
+import { motion } from "framer-motion";
+import Navbar from "./Navebar";
 
-const Hero = () => {
-    return <>
-    {/* Hero Section with Enhanced Effects */}
-    <header className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-        <Meteors number={20} />
-        <div className="absolute inset-0">
-          <motion.div 
-            className="absolute inset-0 bg-black opacity-60"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            />
-          <motion.img 
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" 
-            alt="Background" 
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 2 }}
-            />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <AnimatedText
-            text="AMIKODERS HACKATHON 2024"
-            className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600"
-            />
-          <motion.p 
-            className="text-xl mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            >
-            48 Hours of Innovation, Coding, and Creation
-          </motion.p>
-
-          <div className="mb-12">
-            <CountdownTimer />
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <MovingBorder className="inline-block">
-              <button className="relative px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold hover:scale-105 transition-transform">
-                Register Now
-              </button>
-            </MovingBorder>
-            <MovingBorder className="inline-block">
-              <a 
-                href="https://whatsapp.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="relative px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl font-semibold hover:scale-105 transition-transform flex items-center gap-2"
+export default function Hero() {
+    return (
+        <>
+            <Navbar></Navbar>
+            <section className="relative w-full h-screen overflow-hidden">
+                {/* Background Video */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    poster="/Expo.jpg"
+                    className="absolute inset-0 w-full h-90% object-cover"
                 >
-                <MessageCircle className="w-5 h-5" />
-                Join WhatsApp
-              </a>
-            </MovingBorder>
-          </div>
-        </div>
-      </header>
-    </>;
-};
+                    <source src="/Expo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
 
-export default Hero;
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+                {/* Content */}
+                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+                    <motion.h1
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-5xl md:text-7xl text-yellow-400 font-extrabold"
+                        style={{ fontFamily: "Orbitron, sans-serif" }}
+                    >
+                        HACK-IT 25
+                    </motion.h1>
+
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="text-xl md:text-2xl text-blue-300 mt-2"
+                        style={{ fontFamily: "Orbitron, sans-serif" }}
+                    >
+                        AMITY UNIVERSITY PATNA
+                    </motion.h2>
+
+                    <p className="text-lg md:text-xl text-gray-300 mt-1">
+                        (15-19 Mar, 2025)
+                    </p>
+
+                    {/* Buttons */}
+                    <div className="mt-6 flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6">
+                        <a
+                            href="/register/delegate"
+                            className="px-6 py-3 bg-white text-black font-bold rounded-full shadow-lg hover:bg-gray-300 transition"
+                        >
+                            Delegate Card Registration &gt;
+                        </a>
+                        <a
+                            href="/register/event"
+                            className="px-6 py-3 bg-white text-black font-bold rounded-full shadow-lg hover:bg-gray-300 transition"
+                        >
+                            Event Registration &gt;
+                        </a>
+                    </div>
+
+                    {/* Scroll Indicator */}
+                    <div className="absolute bottom-8 animate-bounce">
+                        <svg
+                            className="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+}

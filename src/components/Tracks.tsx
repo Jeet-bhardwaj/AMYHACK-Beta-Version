@@ -1,12 +1,7 @@
-import {
-    
-    Users,
-    Code,
-    Trophy,
-  
-} from "lucide-react";
+import { Users, Code, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedText } from "./ui/animated-text";
+import Countdown from "./ui/countdown-timer";
 const Tracks = () => {
     const tracks = [
         {
@@ -57,6 +52,7 @@ const Tracks = () => {
                     </div>
                 </div>
             </section>
+            <Countdown />
         </>
     );
 };

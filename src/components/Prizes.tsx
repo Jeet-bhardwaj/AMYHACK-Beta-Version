@@ -1,13 +1,7 @@
-import React from 'react';
+
 import { Calendar, Users, Code, Trophy, ChevronRight, MessageCircle, Instagram, Github, Twitter, MapPin, Award, Gift, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AnimatedText } from './ui/animated-text';
-import { MovingBorder } from './ui/moving-border';
-import { Meteors } from './ui/meteor-effect';
-import  CountdownTimer from './ui/countdown-timer';
-import Timeline from './Timeline';
-import Tracks from './Tracks';
-import Hero from './Hero';
 
 
 
@@ -19,7 +13,8 @@ import Hero from './Hero';
   ];
 
 const Prizes = () =>{
-     return (<><section className="py-20 px-4 relative overflow-hidden">
+     return (<>
+     <section className="py-20 px-4 relative overflow-hidden">
           <div className="max-w-6xl mx-auto">
             <AnimatedText
               text="Prizes & Rewards"

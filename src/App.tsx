@@ -8,9 +8,11 @@ import Rules from './components/Rules';
 import Location from './components/Location';
 import Footer from './components/Footer';
 import styles from './App.module.css';
+import Countdown from './components/ui/countdown-timer';
 
 function App() {
   const components = [
+
     { id: 'hero', component: <Hero /> },
     { id: 'timeline', component: <Timeline /> },
     { id: 'tracks', component: <Tracks /> },
