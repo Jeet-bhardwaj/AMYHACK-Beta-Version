@@ -1,0 +1,32 @@
+/* App.module.css */
+
+.appContainer {
+     min-height: 100vh;
+     background: linear-gradient(to bottom right, #1a202c, #6b46c1, #9f7aea);
+     color: white;
+     font-family: 'Arial', sans-serif;
+   }
+   
+   /* Fade-in and Fade-out Animations */
+   .fadeEnter {
+     opacity: 0;
+     transform: translateY(20px);
+   }
+   
+   .fadeEnterActive {
+     opacity: 1;
+     transform: translateY(0);
+     transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+   }
+   
+   .fadeExit {
+     opacity: 1;
+     transform: translateY(0);
+   }
+   
+   .fadeExitActive {
+     opacity: 0;
+     transform: translateY(-20px);
+     transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+   }
+   

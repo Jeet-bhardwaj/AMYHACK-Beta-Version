@@ -1,59 +1,46 @@
-import {
-    Calendar,
-    Users,
-    Code,
-    Trophy,
-    ChevronRight,
-    MessageCircle,
-    Instagram,
-    Github,
-    Twitter,
-    MapPin,
-    Award,
-    Gift,
-    Sparkles,
-    Ruler,
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { AnimatedText } from "./components/ui/animated-text";
-import Timeline from "./components/Timeline";
-import Tracks from "./components/Tracks";
-import Hero from "./components/Hero";
-import Prizes from "./components/Prizes";
-import Sponsors from "./components/Sponsors";
-import Location from "./components/Location";
-import Footer from "./components/Footer";
-import Rules from "./components/Rules";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Hero from './components/Hero';
+import Timeline from './components/Timeline';
+import Tracks from './components/Tracks';
+import Prizes from './components/Prizes';
+import Sponsors from './components/Sponsors';
+import Rules from './components/Rules';
+import Location from './components/Location';
+import Footer from './components/Footer';
+import styles from './App.module.css';
 
 function App() {
-    return (
-        <>
-            <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white">
-                {/* Hero Section with Enhanced Effects */}
-                <Hero />
-                {/* Timeline Section */}
-                <Timeline></Timeline>
+  const components = [
+    { id: 'hero', component: <Hero /> },
+    { id: 'timeline', component: <Timeline /> },
+    { id: 'tracks', component: <Tracks /> },
+    { id: 'prizes', component: <Prizes /> },
+    { id: 'sponsors', component: <Sponsors /> },
+    { id: 'rules', component: <Rules /> },
+    { id: 'location', component: <Location /> },
+    { id: 'footer', component: <Footer /> },
+  ];
 
-                {/* Tracks Section */}
-                <Tracks></Tracks>
-
-                {/* Prizes Section */}
-                <Prizes></Prizes>
-
-                {/* Sponsors Section */}
-                <Sponsors></Sponsors>
-
-                {/* Rules Section */}
-                <Rules></Rules>
-
-                {/* Location Section */}
-                <Location></Location>
-
-                {/* Footer */}
-                <Footer></Footer>
-            </div>
-        </>
-    );
+  return (
+    <div className={styles.appContainer}>
+      <TransitionGroup>
+        {components.map(({ id, component }) => (
+          <CSSTransition
+            key={id}
+            timeout={500}
+            classNames={{
+              enter: styles.fadeEnter,
+              enterActive: styles.fadeEnterActive,
+              exit: styles.fadeExit,
+              exitActive: styles.fadeExitActive,
+            }}
+          >
+            {component}
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
+    </div>
+  );
 }
 
 export default App;
